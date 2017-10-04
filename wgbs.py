@@ -10,15 +10,30 @@ import os
 
 
 def make_directories(dir_path): 
+    """
+    Checks if directory exists, otherwise, makes the directory
+    :param dir_path: directory to be made 
+    :returns: NONE
+    """
+
     if not(os.path.exists(dir_path)):
             os.mkdir(dir_path)
 
 
-def get_fastq(dir_path): 
+def get_fastq(dir_path):
+
+    """
+    finds all the relelvant paired fastq files in a directory 
+    :param dir_path: directory for files to be discovered 
+    :returns: list of the fwd and rv fastq file names 
+    """
 
     fastq1 = []
     fastq2 = []
 
+    # iterates over all the fastq files in the directory 
+    # and finds appropriate pairs for paired end analysis 
+    # returns list of each fastq 
     for fastq in os.listdir(dir_path): 
         if name in fastq and "_1" in fastq: 
             fastq1.append(fastq)
@@ -27,16 +42,27 @@ def get_fastq(dir_path):
     return fastq1, fastq2
 
 
-def run_split_file(input_dir, output): 
+def run_split_file(input_dir, output):
+    """ 
+    runs split file command to split fastq into 18 milllion reads 
+    for further processing 
+    :param input_dir: dir containing files to be split 
+    :param output: output dir for analysis 
 
+    """ 
+
+    # calls fastq_split.sh with the input dir of file and output dir 
     split_file_cmd = "./fastq_split.sh" + " " + input_dir + " " + output
-
-    # split fastq files into groups of 18 million reads
     subprocess.call(split_file_cmd, shell=True)
 
 
 def run_bismark(dir_path): 
+    """ 
+    runs trim galore and bismark
+    :param dir_path: output dir path 
+    """
 
+    # names and makes directories for analysis output 
     bam_path = dir_path + "/bam_files"
     log_path = dir_path + "/log_path"
     temp_dir = dir_path + "/temp_dir"
@@ -45,26 +71,37 @@ def run_bismark(dir_path):
     make_directories(log_path)
     make_directories(temp_dir)
 
+    # gets list of relevant fastq files 
     fastq1, fastq2 = get_fastq(dir_path)
 
+    # for each fastq file pair, run trimgalore and bismark 
+    # this step takes a while 
     for i in range(len(fastq1)): 
-        bismark_cmd = "./trim_galore_bismark_alignment.sh" + " " + fastq1[i] + " " + fastq2[i] + " " + bam_path + " " + temp_dir
+        bismark_cmd = "./trim_galore_bismark_alignment.sh" + " " + dir_path + "/" + fastq1[i] + " " + dir_path + "/" + fastq2[i] + " " + bam_path + " " + temp_dir
+        print(bismark_cmd)
         subprocess.call(bismark_cmd, shell=True)
 
 
-def run_merge_call_methylation(dir_path): 
+def run_merge_call_methylation(dir_path, name): 
+    """
+    runs methylation call 
+    :param dir_path: output dir 
+    :param name: name of file for analysis
+    """
 
+    # recapitulates bam path to access further analysis on bam files 
     bam_path = dir_path + "/bam_files"
 
-    merge_cmd = "mergeUnsorted_dedup_files_for_methExtraction_orig.sh" + " " + dir_path + " " + str(name)
+    # calls methylation extraction 
+    merge_cmd = "mergeUnsorted_dedup_files_for_methExtraction.sh" + " " + dir_path + " " + str(name)
     subprocess.call(merge_cmd)
 
 
 if __name__=="__main__":
 
-    # takes in command line arguments
+    # takes in command line arguments for input, output, and which file to use 
     # @TODO make run/output optional 
-
+    # @TODO make parallelizable 
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help="path containing fastq files")
     parser.add_argument("output", help="path where outputdir should be created")
@@ -77,14 +114,14 @@ if __name__=="__main__":
 
     make_directories(output)
 
+    # for each file we want to analyze, run pipeline 
     for name in file_name: 
 
         print("splitting files for" + str(name))
-        # run_split_file(input_dir + "/" + name, output)
+        run_split_file(input_dir + "/" + name, output)
         print("done splitting files") 
         print()
         print()
-
 
         dir_path = output + "/" + name 
         make_directories(dir_path) 
