@@ -123,8 +123,7 @@ if __name__=="__main__":
 
     make_directories(output)
 
-    # for each file we want to analyze, run pipeline 
-    
+    # # for each file we want to analyze, run pipeline 
     # print("splitting files for " + str(name))
     # run_split_file(input_dir, output, name)
     # print("done splitting files") 
@@ -132,12 +131,12 @@ if __name__=="__main__":
     # print()
 
     dir_path = output + "/" + name 
-    # make_directories(dir_path) 
-    # print("Trimming and running bismark for " + str(name)) 
-    # run_bismark(dir_path)
-    # print("done running bismark")
-    # print()
-    # print()
+    make_directories(dir_path) 
+    print("Trimming and running bismark for " + str(name)) 
+    run_bismark(dir_path)
+    print("done running bismark")
+    print()
+    print()
 
     print("calling methylation for " + str(name))
     run_merge_call_methylation(output, dir_path, name)
