@@ -13,4 +13,4 @@
 
 
 
-python percent_meth.py $SGE_TASK_ID
+scl enable python33 'python percent_meth_2.py $SGE_TASK_ID'
