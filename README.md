@@ -9,10 +9,15 @@ Takes raw whole-genome bisulfite sequencing data (fastq files) and returns the n
 
 ## Requirements
 ------
- 
+
 (1) Bowtie 2 read aligner 
 
-[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) 
+[Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) - used to align raw fastq reads to a genome of choice 
+
+(2) 
+
 
 Bisulfite converted genome 
+
+Used by bismark for alignment. 
 
