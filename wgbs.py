@@ -79,7 +79,8 @@ def run_bismark(dir_path, script_directory):
     # this step takes a while
     for i in range(len(fastq1)):
         bismark_cmd = script_directory + "/trim_galore_bismark_alignment.sh" + " " + dir_path + "/" + fastq1[i] + " " + dir_path + "/" + \
-                      fastq2[i] + " " + bam_path + " " + temp_dir
+                      fastq2[i] + " " + bam_path + " " + os.getcwd() + " " + temp_dir
+        
         subprocess.call(bismark_cmd, shell=True)
 
 
@@ -94,7 +95,7 @@ def run_merge_call_methylation(output, dir_path, name):
     make_directories(methy_path)
 
     # calls methylation extraction
-    merge_cmd = "./mergeUnsorted_dedup_files_for_methExtraction.sh" + " " + dir_path + " " + bam_path + " " + name
+    merge_cmd = "./mergeUnsorted_dedup_files_for_methExtraction.sh" + " " + dir_path + " " + bam_path + " " + name + " " + os.getcwd()
 
     subprocess.call(merge_cmd, shell=True)
 
@@ -123,22 +124,16 @@ if __name__ == "__main__":
     print("splitting files for " + str(name))
     run_split_file(input_dir, output, name)
     print("done splitting files")
-    print()
-    print()
 
     dir_path = output + "/" + name
     make_directories(dir_path)
     print("Trimming and running bismark for " + str(name))
     run_bismark(dir_path)
     print("done running bismark")
-    print()
-    print()
-
+  
     print("calling methylation for " + str(name))
     run_merge_call_methylation(output, dir_path, name)
     print("done calling methylation")
-    print()
-    print()
 
     print("Finished.")
 

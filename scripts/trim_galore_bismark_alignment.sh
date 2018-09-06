@@ -1,43 +1,15 @@
 #!/bin/bash
 
-### Instructions: This script executes bismark and trim galore for each paired-end fastqs, and is being called by other call_trim_galore_bismark_alignment.sh script
-### residing in the bismark_pipeline dir. 
-
-# SOURCE_DIR="/opt/HAIB/myerslab/etc"
-
-# ### Mandatory sourcing of bashrc for necessary environment variables. ###
-# if [ -e $SOURCE_DIR/bashrc ]; then
-#     . $SOURCE_DIR/bashrc
-# else echo "[fatal] - Could not find myerslab bashrc file. Exiting"; exit 1; fi
-
-# ### Mandatory sourcing of functions to get helper functions (like call_cmd). ###
-# if [ -e $SOURCE_DIR/functions ]; then
-#     . $SOURCE_DIR/functions
-# else echo "[fatal] - Could not find functions file. Exiting"; exit 1; fi
-
-# ### Verify we are not running on the head node. ###
-# if [ -z "$LSB_JOBID" ]; then log_msg fatal "Please run on a compute node. Exiting"; exit 1; fi
-GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
-
-### Though bismark could be in path, set full bismark path location for consistency:
-BISMARK_PATH="/ye/zaitlenlabstore/christacaggiano/Bismark"
-
-### Though samtools could be in path, set full samtools path location for consistency:
-SAMTOOLS_PATH="/ye/netapp/jimmie.ye/tools/samtools-1.3"
-
-### Set trimgalore path location for consistency:
-TRIMGALORE_PATH="/ye/zaitlenlabstore/christacaggiano/trim-galore/TrimGalore-0.4.3"
-
-### Set bowtie path location for consistency:
-BOWTIE_PATH="/ye/zaitlenlabstore/christacaggiano/bowtie2-2.3.3"
-
 ### Variables passed from the previous script call_trim_galore_bismark_alignment.sh retained:
 INPUT_FILE_R1=$1
 INPUT_FILE_R2=$2
 OUTPUT_DIR=$3
+CURRENT_WD=$4
+
+source $CURRENT_WD"/qsub_submit.sh"
 
 ### Set the temporary dir:
-TEMP_DIR=$4
+TEMP_DIR=$5
 
 ### Run trim galore on each splitted paired-end fastqs with 18 million reads, and clip 4-bp from each end to get rid of any poor read quality bias: 
 $TRIMGALORE_PATH/trim_galore -o $TEMP_DIR --dont_gzip --clip_R1 4 --clip_R2 4 --three_prime_clip_R1 4 --three_prime_clip_R2 4 --paired $INPUT_FILE_R1 $INPUT_FILE_R2

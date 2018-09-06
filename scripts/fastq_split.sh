@@ -1,9 +1,5 @@
 #!/bin/bash
 
-### Instruction: This short script is dependent, and is being called by other call_fastq_split.sh script residing in bismark_pipeline dir.
-
-
-
 INPUT_DIR=$1 
 OUTPUT_DIR=$2 
 LIB=$3
