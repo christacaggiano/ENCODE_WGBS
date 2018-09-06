@@ -1,19 +1,11 @@
 #!/bin/bash
-
-### Instruction: This script is being used by other script in bismark_pipeline dir call_mergeUnsorted_dedup_files_for_methExtraction.sh, and this script would merge the unsorted bam files, 
-### and deduplicate the unsorted_merged bam files, which would be further process for the methylation calling. More importantly, since methylation extraction doesn't want 
-### any positional sorting to be done, so you would want to merge all the unsorted bam files, output of bismark alignment, in to one merged bam file for methylation call later on.
-### Basically, you would be skipping the sorting and indexing step here, which could save considerable computation time too.	
-
-GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
-BISMARK_PATH="/ye/zaitlenlabstore/christacaggiano/Bismark"
-SAMTOOLS_PATH="/ye/netapp/jimmie.ye/tools/samtools-1.3"
-TRIMGALORE_PATH="/ye/zaitlenlabstore/christacaggiano/trim-galore/TrimGalore-0.4.3"
-BOWTIE_PATH="/ye/zaitlenlabstore/christacaggiano/bowtie2-2.3.3"
-
+ 
 OUTPUT_DIR=$1
 BAM_DIR=$2
 LIB=$3
+CURRENT_WD=$4
+
+source $CURRENT_WD"/qsub_submit.sh"
 
 echo "$OUTPUT_DIR"
 
@@ -50,5 +42,5 @@ METH_OUTPUT_DIR=$OUTPUT_DIR/unsortedButMerged_ForBismark_file/methylation_extrac
 for bam_file in $(ls $BAM_PATH/*_unsorted_merged.deduplicated.bam); do
 	$BISMARK_PATH/bismark_methylation_extractor -p --no_overlap -o $METH_OUTPUT_DIR --comprehensive --report --bedGraph --genome_folder $GENOME_PATH $bam_file	
 	echo ""
-	done
+done
 
