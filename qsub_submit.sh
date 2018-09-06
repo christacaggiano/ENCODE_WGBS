@@ -24,6 +24,5 @@ output="/zaitlen/netapp/group/christa"
 fastq_prefix=$SGE_TASK_ID
 scripts="scripts"
 
-
-# runs the pipeline 
+################# runs the pipeline ##########################
 python wgbs.py $input $output $fastq_prefix $scripts
