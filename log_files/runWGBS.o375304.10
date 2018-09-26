@@ -1,9 +1,0 @@
-splitting files for 10
-done splitting files
-Trimming and running bismark for 10
-Traceback (most recent call last):
-  File "wgbs.py", line 127, in <module>
-    run_bismark(dir_path, script_directory)
-  File "wgbs.py", line 74, in run_bismark
-    fastq1, fastq2 = get_fastq(dir_path, name)
-TypeError: get_fastq() takes 1 positional argument but 2 were given

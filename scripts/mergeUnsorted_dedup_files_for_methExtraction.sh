@@ -1,11 +1,10 @@
-#$ -S /bin/bash                     
-#$ -cwd                            
-#$ -r y                            
-#$ -j y
-#$ -l mem_free=5G                 
-#$ -l arch=linux-x64               
-#$ -l netapp=2G,scratch=2G         
-#$ -l h_rt=336:00:00
+#! /bin/bash                                                 
+#PBS -r y                            
+#PBS -j y
+#PBS -l select=1:ncous=1:mem=5G #amount of memory needed                          
+#PBS -l walltime=336:00:00 #max amount of time the job should run
+
+cd /30days/uqfgarto/ENCODE_WGBS
  
 OUTPUT_DIR=$1
 BAM_DIR=$2

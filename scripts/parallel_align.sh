@@ -1,13 +1,11 @@
-#!/bin/bash                         
+#!/bin/sh                         
+                                               
+#PBS -r y                            
+#PBS -j y
+#PBS -l select=1:ncpus=1:mem=5gb                     
+#PBS -l walltime=336:00:00
 
-#$ -S /bin/bash                     
-#$ -cwd                            
-#$ -r y                            
-#$ -j y
-#$ -l mem_free=5G                 
-#$ -l arch=linux-x64               
-#$ -l netapp=2G,scratch=2G         
-#$ -l h_rt=336:00:00
+cd /30days/uqfgarto/ENCODE_WGBS/
 
 output=$1
 script_dir=$2
@@ -15,7 +13,7 @@ name=$3
 
 fastq_files=($(ls -d $name*R1*))
 
-fq1=${fastq_files[$SGE_TASK_ID-1]}
+fq1=${fastq_files[$PBS_ARRAYID-1]}
 fq2=${fq1/R1/R2}
 
 echo $fq1

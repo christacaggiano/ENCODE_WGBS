@@ -1,28 +1,25 @@
-################ qsub parameters ###########################
-#$ -S /bin/bash                     
-#$ -cwd  # run in current directory                         
-#$ -r y                            
-#$ -j y                           
-#$ -l mem_free=15G  # amount of memory needed                
-#$ -l arch=linux-x64               
-#$ -l netapp=2G,scratch=2G  
-#$ -e log_files  # where to put error messages
-#$ -o log_files  # where to put output messages
-#$ -l h_rt=336:00:00  # max amount of time pipeline should run
-#$ -t 10  
+#!/bin/sh 
+#PBS -A UQ-IMB-CNSG
+#PBS -l walltime=336:00:00 
+#PBS -l select=1:ncpus=1:mem=15gb
+#PBS -e log_files 
+#PBS -o log_files 
+#PBS -t 1-2  
+
+cd /30days/uqfgarto/ENCODE_WGBS
 
 ################## environment ###############################
- GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
-BISMARK_PATH="/ye/zaitlenlabstore/christacaggiano/Bismark"
-SAMTOOLS_PATH="/ye/netapp/jimmie.ye/tools/samtools-1.3"
-TRIMGALORE_PATH="/ye/zaitlenlabstore/christacaggiano/trim-galore/TrimGalore-0.4.3"
-BOWTIE_PATH="/ye/zaitlenlabstore/christacaggiano/bowtie2-2.3.3"
+GENOME_PATH="/30days/uqfgarto/Homo_sapiens/UCSC/hg38"
+BISMARK_PATH="/30days/uqfgarto/privatemodules/Bismark"
+SAMTOOLS_PATH="/30days/uqfgarto/privatemodules/samtools-1.9"
+TRIMGALORE_PATH="/30days/uqfgarto/privatemodules/TrimGalore/TrimGalore-0.5.0"
+BOWTIE_PATH="/30days/uqfgarto/privatemodules/bowtie2-2.3.4.2-macos-x86_64"
 
 ################ experiment directories ######################
-input="/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-"$SGE_TASK_ID"_BC"
-output="/zaitlen/netapp/group/christa"
-fastq_prefix=$SGE_TASK_ID
-scripts="/ye/zaitlenlabstore/christacaggiano/ENCODE_WGBS/scripts"
+input="/30days/uqfgarto/fastqc_firstrun/zaitlenn-"$PBS_ARRAYID"_BC"
+output="/30days/uqfgarto/fastqc_firstrun/output/"
+fastq_prefix=$PBS_ARRAYID
+scripts="/30days/uqfgarto/ENCODE_WGBS/scripts"
 
 ################# runs the pipeline ##########################
 python wgbs.py $input $output $fastq_prefix $scripts

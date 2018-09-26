@@ -1,11 +1,10 @@
-#$ -S /bin/bash                     
-#$ -cwd                            
-#$ -r y                            
-#$ -j y
-#$ -l mem_free=5G                 
-#$ -l arch=linux-x64               
-#$ -l netapp=2G,scratch=2G         
-#$ -l h_rt=336:00:00
+#!/bin/sh                                                
+#PBS -r y                            
+#PBS -j y
+#PBS -l select=1:ncpus=1:mem=5gb                    
+#PBS -l walltime=336:00:00
+
+cd /30days/uqfgarto/ENCODE_WGBS/
 
 ### Variables passed from the previous script call_trim_galore_bismark_alignment.sh retained:
 NAME=$1
