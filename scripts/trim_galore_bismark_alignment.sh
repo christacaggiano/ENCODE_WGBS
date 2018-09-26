@@ -9,15 +9,14 @@
 
 ### Variables passed from the previous script call_trim_galore_bismark_alignment.sh retained:
 NAME=$1
-INPUT_FILE_R1=$2
-OUTPUT_DIR=$3
-CURRENT_WD=$4
-TEMP_DIR=$5
-ID=$6
+OUTPUT_DIR=$2
+CURRENT_WD=$3
+TEMP_DIR=$4
+ID=$5
 
-source runWGBS
+source $CURRENT_WD/runWGBS
 
-fastq_files=($(ls -d $NAME*R1*))
+fastq_files=($(ls -d $OUTPUT_DIR/$NAME*R1*))
 
 fq1=${fastq_files[$ID]}
 fq2=${fq1/R1/R2}
