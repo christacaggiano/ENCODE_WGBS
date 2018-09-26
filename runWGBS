@@ -12,7 +12,7 @@
 #$ -t 10  
 
 ################## environment ###############################
-GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
+ GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
 BISMARK_PATH="/ye/zaitlenlabstore/christacaggiano/Bismark"
 SAMTOOLS_PATH="/ye/netapp/jimmie.ye/tools/samtools-1.3"
 TRIMGALORE_PATH="/ye/zaitlenlabstore/christacaggiano/trim-galore/TrimGalore-0.4.3"
