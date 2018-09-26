@@ -9,17 +9,16 @@
 
 ### Variables passed from the previous script call_trim_galore_bismark_alignment.sh retained:
 INPUT_FILE_R1=$1
-INPUT_FILE_R2=$2
-OUTPUT_DIR=$3
-CURRENT_WD=$4
-TEMP_DIR=$5
-ID=$6
+OUTPUT_DIR=$2
+CURRENT_WD=$3
+TEMP_DIR=$4
+ID=$5
 
-source $CURRENT_WD"/qsub_submit.sh"
+source qsub_submit.sh
 
 fastq_files=($(ls -d $ID*R1*))
 
-fq1=${fastq_files[$ID-1]}
+fq1=${fastq_files[$ID]}
 fq2=${fq1/R1/R2}
 
 $TRIMGALORE_PATH/trim_galore -o $TEMP_DIR --dont_gzip --clip_R1 4 --clip_R2 4 --three_prime_clip_R1 4 --three_prime_clip_R2 4 --paired $fq1 $fq2

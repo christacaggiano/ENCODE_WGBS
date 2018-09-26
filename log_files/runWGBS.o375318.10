@@ -1,0 +1,46 @@
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+scripts/trim_galore_bismark_alignment.sh: line 18: /zaitlen/netapp/group/christa/10/temp_dir/qsub_submit.sh: No such file or directory
+/bin/sh: ./mergeUnsorted_dedup_files_for_methExtraction.sh: No such file or directory
+splitting files for 10
+done splitting files
+Trimming and running bismark for 10
+done running bismark
+calling methylation for 10
+done calling methylation
+Finished.

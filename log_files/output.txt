@@ -1,0 +1,5 @@
+splitting files for 10
+Traceback (most recent call last):
+  File "wgbs.py", line 124, in <module>
+    run_split_file(input_dir, output, name)
+TypeError: run_split_file() missing 1 required positional argument: 'script_directory'

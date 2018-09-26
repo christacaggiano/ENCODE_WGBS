@@ -1,17 +1,15 @@
-#!/bin/bash                         
-
 ################ qsub parameters ###########################
 #$ -S /bin/bash                     
-#$ -cwd                             
+#$ -cwd  # run in current directory                         
 #$ -r y                            
 #$ -j y                           
-#$ -l mem_free=15G                 
+#$ -l mem_free=15G  # amount of memory needed                
 #$ -l arch=linux-x64               
 #$ -l netapp=2G,scratch=2G  
-#$ -e log_files/error.txt
-#$ -o log_files/output.txt 
-#$ -l h_rt=336:00:00
-#$ -t 10 
+#$ -e log_files  # where to put error messages
+#$ -o log_files  # where to put output messages
+#$ -l h_rt=336:00:00  # max amount of time pipeline should run 
+#$ -t 10  # prefix for fastq file 
 
 ################## environment ###############################
 GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
@@ -24,7 +22,7 @@ BOWTIE_PATH="/ye/zaitlenlabstore/christacaggiano/bowtie2-2.3.3"
 input="/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-"$SGE_TASK_ID"_BC"
 output="/zaitlen/netapp/group/christa"
 fastq_prefix=$SGE_TASK_ID
-scripts="scripts"
+scripts="/ye/zaitlenlabstore/christacaggiano/ENCODE_WGBS/scripts"
 
 ################# runs the pipeline ##########################
 python wgbs.py $input $output $fastq_prefix $scripts

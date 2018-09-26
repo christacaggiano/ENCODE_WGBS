@@ -1,0 +1,19 @@
+################ qsub parameters ###########################
+#$ -S /bin/bash                     
+#$ -cwd  # run in current directory                         
+#$ -r y                            
+#$ -j y                           
+#$ -l mem_free=1G  # amount of memory needed                
+#$ -l arch=linux-x64               
+#$ -l netapp=2G,scratch=2G  
+#$ -e log_files  # where to put error messages
+#$ -o log_files  # where to put output messages
+#$ -l h_rt=336:00:00  # max amount of time pipeline should run 
+
+############### directories ################################
+# fastqc_dir=""
+fastq_directory="/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files"
+script_dir="scripts"
+
+################ run ########################################
+$scripts/fastqc.sh $fastq_directory

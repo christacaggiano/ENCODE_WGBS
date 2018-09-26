@@ -48,6 +48,6 @@ METH_OUTPUT_DIR=$OUTPUT_DIR/unsortedButMerged_ForBismark_file/methylation_extrac
 
 ### BAM files should be unsorted, and Default = CpG context only; else use --CX_context for all CpG info.
 for bam_file in $(ls $BAM_PATH/*_unsorted_merged.deduplicated.bam); do
-	$BISMARK_PATH/bismark_methylation_extractor -p --include_overlap  --gzip --multicore 10 -o $METH_OUTPUT_DIR --report --bedGraph --genome_folder $GENOME_PATH $bam_file	
+	$BISMARK_PATH/bismark_methylation_extractor -p --gzip --multicore 10 -o $METH_OUTPUT_DIR --report --bedGraph --genome_folder $GENOME_PATH $bam_file	
 done
 

@@ -42,7 +42,7 @@ def get_fastq(dir_path):
     return fastq1, fastq2
 
 
-def run_split_file(input_dir, output, name, script_directory):
+def run_split_file(input_dir, output, name):
     """
     runs split file command to split fastq into 18 milllion reads
     for further processing
@@ -65,21 +65,23 @@ def run_bismark(dir_path, script_directory):
 
     # names and makes directories for analysis output
     bam_path = dir_path + "/bam_files"
-    log_path = dir_path + "/log_path"
     temp_dir = dir_path + "/temp_dir"
 
     make_directories(bam_path)
-    make_directories(log_path)
     make_directories(temp_dir)
 
+    cwd = os.getcwd()
+
+
     # gets list of relevant fastq files
-    fastq1, fastq2 = get_fastq(dir_path, name)
+    fastq1, fastq2 = get_fastq(dir_path)
 
     # for each fastq file pair, run trimgalore and bismark
     # this step takes a while
     for i in range(len(fastq1)):
-        bismark_cmd = "./trim_galore_bismark_alignment.sh" + " " + dir_path + "/" + fastq1[i] + " " + dir_path + "/" + \
-                    " " + bam_path + " " + temp_dir + " " + str(i)
+
+        bismark_cmd = script_directory + "/trim_galore_bismark_alignment.sh" + " " \
+        + dir_path + "/" + fastq1[i] + " " + bam_path + " " + cwd + " " + temp_dir + " " + str(i)
         subprocess.call(bismark_cmd, shell=True)
 
 
@@ -102,7 +104,6 @@ def run_merge_call_methylation(output, dir_path, name):
 if __name__ == "__main__":
 
     # takes in command line arguments for input, output, and which file to use
-    # @TODO make run/output optional
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help="path containing fastq files")
     parser.add_argument("output", help="path where outputdir should be created")
@@ -119,15 +120,15 @@ if __name__ == "__main__":
 
     make_directories(output)
 
-    # # for each file we want to analyze, run pipeline
+    # for each file we want to analyze, run pipeline
     print("splitting files for " + str(name))
-    run_split_file(input_dir, output, name)
+    # run_split_file(input_dir, output, name)
     print("done splitting files")
 
     dir_path = output + "/" + name
     make_directories(dir_path)
     print("Trimming and running bismark for " + str(name))
-    run_bismark(dir_path)
+    run_bismark(dir_path, script_directory)
     print("done running bismark")
   
     print("calling methylation for " + str(name))

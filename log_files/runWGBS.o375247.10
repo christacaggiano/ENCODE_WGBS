@@ -1,0 +1,16 @@
+Splitting of fastq
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L001_R1_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L001_R2_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L002_R1_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L002_R2_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L003_R1_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L003_R2_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L004_R1_001.fastq.gz
+/ye/zaitlenlabstore/christacaggiano/cfDNA_project/second_primary_methylation_data_ALS/fastq_files/zaitlenn-10_BC/10_BC_S2_L004_R2_001.fastq.gz
+splitting files for 10
+done splitting files
+Trimming and running bismark for 10
+Traceback (most recent call last):
+  File "wgbs.py", line 129, in <module>
+    
+TypeError: run_bismark() missing 1 required positional argument: 'script_directory'

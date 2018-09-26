@@ -1,0 +1,46 @@
+/bin/sh: ./mergeUnsorted_dedup_files_for_methExtraction.sh: No such file or directory
+splitting files for 10
+done splitting files
+Trimming and running bismark for 10
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.00 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 0
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.01 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 1
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.02 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 2
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.03 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 3
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.04 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 4
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.05 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 5
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.06 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 6
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.07 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 7
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.08 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 8
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L001_R1_001.09 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 9
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.00 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 10
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.01 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 11
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.02 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 12
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.03 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 13
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.04 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 14
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.05 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 15
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.06 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 16
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.07 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 17
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L002_R1_001.08 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 18
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.00 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 19
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.01 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 20
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.02 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 21
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.03 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 22
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.04 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 23
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.05 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 24
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.06 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 25
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.07 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 26
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.08 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 27
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L003_R1_001.09 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 28
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.00 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 29
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.01 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 30
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.02 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 31
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.03 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 32
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.04 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 33
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.05 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 34
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.06 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 35
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.07 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 36
+scripts/trim_galore_bismark_alignment.sh /zaitlen/netapp/group/christa/10/10_BC_S2_L004_R1_001.08 /zaitlen/netapp/group/christa/10/ /zaitlen/netapp/group/christa/10/bam_files /zaitlen/netapp/group/christa/10/temp_dir 37
+done running bismark
+calling methylation for 10
+done calling methylation
+Finished.
