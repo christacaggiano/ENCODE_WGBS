@@ -7,9 +7,11 @@
 #$ -j y                           
 #$ -l mem_free=15G                 
 #$ -l arch=linux-x64               
-#$ -l netapp=2G,scratch=2G         
+#$ -l netapp=2G,scratch=2G  
+#$ -e log_files/error.txt
+#$ -o log_files/output.txt 
 #$ -l h_rt=336:00:00
-#$ -t 9:10  
+#$ -t 10 
 
 ################## environment ###############################
 GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"

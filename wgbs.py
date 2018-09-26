@@ -78,9 +78,8 @@ def run_bismark(dir_path, script_directory):
     # for each fastq file pair, run trimgalore and bismark
     # this step takes a while
     for i in range(len(fastq1)):
-        bismark_cmd = script_directory + "/trim_galore_bismark_alignment.sh" + " " + dir_path + "/" + fastq1[i] + " " + dir_path + "/" + \
-                      fastq2[i] + " " + bam_path + " " + os.getcwd() + " " + temp_dir
-        
+        bismark_cmd = "./trim_galore_bismark_alignment.sh" + " " + dir_path + "/" + fastq1[i] + " " + dir_path + "/" + \
+                    " " + bam_path + " " + temp_dir + " " + str(i)
         subprocess.call(bismark_cmd, shell=True)
 
 

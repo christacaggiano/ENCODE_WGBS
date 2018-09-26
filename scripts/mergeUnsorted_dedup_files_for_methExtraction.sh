@@ -1,4 +1,11 @@
-#!/bin/bash
+#$ -S /bin/bash                     
+#$ -cwd                            
+#$ -r y                            
+#$ -j y
+#$ -l mem_free=5G                 
+#$ -l arch=linux-x64               
+#$ -l netapp=2G,scratch=2G         
+#$ -l h_rt=336:00:00
  
 OUTPUT_DIR=$1
 BAM_DIR=$2
@@ -18,9 +25,10 @@ if [[ $BAM_COUNT > 1 ]]; then
 
     else if [[ $BAM_COUNT = 1 ]]; then
             cp $BAM_DIR/*.bam $OUTPUT_DIR/unsortedButMerged_ForBismark_file/${LIB}_unsorted_merged.bam
-            
 	fi      
 fi     
+
+# rm -r  $BAM_DIR/*.bam
 
 ### Run the deduplication, and remove the pcr duplicates from unsorted_bam_files (i.e the sequence aligning to the same genomic positions).
 $BISMARK_PATH/deduplicate_bismark -p --bam $OUTPUT_DIR/unsortedButMerged_ForBismark_file/${LIB}_unsorted_merged.bam --output_dir $OUTPUT_DIR/unsortedButMerged_ForBismark_file
@@ -40,7 +48,6 @@ METH_OUTPUT_DIR=$OUTPUT_DIR/unsortedButMerged_ForBismark_file/methylation_extrac
 
 ### BAM files should be unsorted, and Default = CpG context only; else use --CX_context for all CpG info.
 for bam_file in $(ls $BAM_PATH/*_unsorted_merged.deduplicated.bam); do
-	$BISMARK_PATH/bismark_methylation_extractor -p --no_overlap -o $METH_OUTPUT_DIR --comprehensive --report --bedGraph --genome_folder $GENOME_PATH $bam_file	
-	echo ""
+	$BISMARK_PATH/bismark_methylation_extractor -p --include_overlap  --gzip --multicore 10 -o $METH_OUTPUT_DIR --report --bedGraph --genome_folder $GENOME_PATH $bam_file	
 done
 
