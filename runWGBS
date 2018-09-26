@@ -8,8 +8,8 @@
 #$ -l netapp=2G,scratch=2G  
 #$ -e log_files  # where to put error messages
 #$ -o log_files  # where to put output messages
-#$ -l h_rt=336:00:00  # max amount of time pipeline should run 
-#$ -t 10  # prefix for fastq file 
+#$ -l h_rt=336:00:00  # max amount of time pipeline should run
+#$ -t 10  
 
 ################## environment ###############################
 GENOME_PATH="/ye/zaitlenlabstore/christacaggiano/hg38/"
