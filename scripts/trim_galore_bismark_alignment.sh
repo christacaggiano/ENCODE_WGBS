@@ -8,15 +8,16 @@
 #$ -l h_rt=336:00:00
 
 ### Variables passed from the previous script call_trim_galore_bismark_alignment.sh retained:
-INPUT_FILE_R1=$1
-OUTPUT_DIR=$2
-CURRENT_WD=$3
-TEMP_DIR=$4
-ID=$5
+NAME=$1
+INPUT_FILE_R1=$2
+OUTPUT_DIR=$3
+CURRENT_WD=$4
+TEMP_DIR=$5
+ID=$6
 
-source qsub_submit.sh
+source runWGBS
 
-fastq_files=($(ls -d $ID*R1*))
+fastq_files=($(ls -d $NAME*R1*))
 
 fq1=${fastq_files[$ID]}
 fq2=${fq1/R1/R2}
@@ -30,8 +31,8 @@ TRIMMED_R2=$TEMP_DIR/$(basename $INPUT_FILE_R2 .fastq.gz)_val_2.fq
 ### Run bismark alignment on paired-end trimmed fastqs (read_1 & read_2) using bowtie-2:
 $BISMARK_PATH/bismark --bowtie2 -p 8 --bam --temp_dir $TEMP_DIR --path_to_bowtie $BOWTIE_PATH/ -o $OUTPUT_DIR $GENOME_PATH -1 $TRIMMED_R1 -2 $TRIMMED_R2
 
-rm $TRIMMED_R1
-rm $TRIMMED_R2 
+# rm $TRIMMED_R1
+# rm $TRIMMED_R2 
 
-rm $fq1
-rm $fq2 
+# rm $fq1
+# rm $fq2 

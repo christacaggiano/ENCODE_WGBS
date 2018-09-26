@@ -57,7 +57,7 @@ def run_split_file(input_dir, output, name):
     subprocess.call(split_file_cmd, shell=True)
 
 
-def run_bismark(dir_path, script_directory):
+def run_bismark(dir_path, script_directory, name):
     """
     runs trim galore and bismark
     :param dir_path: output dir path
@@ -80,7 +80,7 @@ def run_bismark(dir_path, script_directory):
     # this step takes a while
     for i in range(len(fastq1)):
 
-        bismark_cmd = script_directory + "/trim_galore_bismark_alignment.sh" + " " \
+        bismark_cmd = script_directory + "/trim_galore_bismark_alignment.sh" + " " + str(name) + " " \
         + dir_path + "/" + fastq1[i] + " " + bam_path + " " + cwd + " " + temp_dir + " " + str(i)
         subprocess.call(bismark_cmd, shell=True)
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     dir_path = output + "/" + name
     make_directories(dir_path)
     print("Trimming and running bismark for " + str(name))
-    run_bismark(dir_path, script_directory)
+    run_bismark(dir_path, script_directory, name)
     print("done running bismark")
   
     print("calling methylation for " + str(name))
