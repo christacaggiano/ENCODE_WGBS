@@ -1,0 +1,31 @@
+######
+
+##ATTEMPT TO RUN
+
+################ qsub parameters ###########################
+#$ -S /bin/bash                     
+#$ -cwd                             
+#$ -r y                            
+#$ -j y                           
+#$ -l mem_free=15G                 
+#$ -l arch=linux-x64               
+#$ -l netapp=2G,scratch=2G         
+#$ -l h_rt=336:00:00
+#$ -t 9:10  
+
+################## environment ###############################
+
+GENOME_PATH="/shares/compbio/Group-Wray/fleur/cfDNA"
+BISMARK_PATH="/shares/compbio/Group-Wray/fleur/cfDNA/Bismark"
+SAMTOOLS_PATH="/shares/compbio/Group-Wray/fleur/cfDNA/samtools-1.9"
+TRIMGALORE_PATH="/shares/compbio/Group-Wray/fleur/cfDNA/TrimGalore/TrimGalore-0.5.0"
+BOWTIE_PATH="/shares/compbio/Group-Wray/fleur/cfDNA/bowtie2-2.3.4.2-macos-x86_64"
+
+################ experiment directories ######################
+input="/gpfs/gpfs01/polaris/Q0286/fleur/UCSF/fastqc_firstrun/zaitlenn-"$SGE_TASK_ID"_BC"
+output="/gpfs/gpfs01/polaris/Q0286/fleur/UCSF/fastqc_firstrun/output"
+fastq_prefix=$SGE_TASK_ID
+scripts="scripts"
+
+################# runs the pipeline ##########################
+python wgbs.py $input $output $fastq_prefix $scripts
