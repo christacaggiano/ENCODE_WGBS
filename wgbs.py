@@ -73,9 +73,9 @@ def run_bismark(output_dir, script_directory, name):
     # gets list of relevant fastq files
     fastq_number = len(get_fastq(output_dir)[0])
 
-    bismark_cmd = "qsub -t 1-" str(fastq_number) + " -N " + str(name) + " " \
+    bismark_cmd = "qsub -t 1-" + str(fastq_number) + " -N " + str(name) + " " \
         + script_directory + " /parallel_align.sh " \
-        + output_dir + " " script_directory + " " + str(name)
+        + output_dir + " " + script_directory + " " + str(name)
 
     subprocess.call(bismark_cmd, shell=True)
 
