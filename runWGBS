@@ -3,7 +3,7 @@
 #$ -cwd  # run in current directory                         
 #$ -r y                            
 #$ -j y                           
-#$ -l mem_free=15G  # amount of memory needed                
+#$ -l mem_free=1G  # amount of memory needed                
 #$ -l arch=linux-x64               
 #$ -l netapp=2G,scratch=2G  
 #$ -e log_files  # where to put error messages
