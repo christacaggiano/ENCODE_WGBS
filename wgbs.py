@@ -118,7 +118,7 @@ if __name__ == "__main__":
     make_directories(output)
 
     # for each file we want to analyze, run pipeline
-    # run_split_file(input_dir, output, name)
+    run_split_file(input_dir, output, name)
 
     dir_path = output + "/" + name
     make_directories(dir_path)
