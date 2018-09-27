@@ -12,7 +12,7 @@ BAM_DIR=$2
 LIB=$3
 CURRENT_WD=$4
 
-source $CURRENT_WD"/qsub_submit.sh"
+source $CURRENT_WD"/runWGBS"
 
 echo "$OUTPUT_DIR"
 

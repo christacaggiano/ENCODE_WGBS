@@ -34,7 +34,7 @@ def get_fastq(dir_path):
     # iterates over all the fastq files in the directory 
     # and finds appropriate pairs for paired end analysis 
     # returns list of each fastq 
-    for fastq in os.listdir(dir_path + "/.fq.gz"): 
+    for fastq in os.listdir(dir_path): 
         if "R1" in fastq: 
             fastq1.append(fastq)
             fastq2.append(fastq.replace("R1","R2"))
@@ -73,10 +73,10 @@ def run_bismark(output_dir, script_directory, name):
     # gets list of relevant fastq files
     fastq_number = len(get_fastq(output_dir)[0])
 
-    bismark_cmd = "qsub -t 1-" + str(fastq_number) + " -N " + str(name) + " " \
-        + script_directory + " /parallel_align.sh " \
+    bismark_cmd = "qsub -t 1-" + str(fastq_number) + " -N job_" + str(name) + " " \
+        + script_directory + "/parallel_align.sh " \
         + output_dir + " " + script_directory + " " + str(name)
-
+    print(bismark_cmd)
     subprocess.call(bismark_cmd, shell=True)
 
 
@@ -91,7 +91,7 @@ def run_merge_call_methylation(output_dir, script_directory, name):
     make_directories(methy_path)
 
     # calls methylation extraction
-    merge_cmd = "qsub -hold_jid " + str(name) + "* " + \
+    merge_cmd = "qsub -hold_jid job_" + str(name) + "* " + \
         script_directory + "/mergeUnsorted_dedup_files_for_methExtraction.sh " \
         + dir_path + " " + bam_path + " " + name + " " + os.getcwd()
 
@@ -118,13 +118,15 @@ if __name__ == "__main__":
     make_directories(output)
 
     # for each file we want to analyze, run pipeline
-    run_split_file(input_dir, output, name)
+    # run_split_file(input_dir, output, name)
 
     dir_path = output + "/" + name
     make_directories(dir_path)
+    print("running bismark")
     run_bismark(dir_path, script_directory, name)
-  
-    run_merge_call_methylation(dir_path, name, script_directory)
+    
+    print("calling methylation")
+    run_merge_call_methylation(dir_path, script_directory, script_directory)
 
 
 
