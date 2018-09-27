@@ -1,10 +1,11 @@
 #!/bin/sh                                                
+#PBS -A UQ-IMB-CNSG
 #PBS -r y                            
 #PBS -j y
 #PBS -l select=1:ncpus=1:mem=5gb                    
 #PBS -l walltime=336:00:00
 
-cd /30days/uqfgarto/ENCODE_WGBS/
+cd /30days/uqfgarto/ENCODE_WGBS
 
 ### Variables passed from the previous script call_trim_galore_bismark_alignment.sh retained:
 NAME=$1

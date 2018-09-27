@@ -1,11 +1,13 @@
-################ qsub parameters ###########################
-#!/bin/sh                                                
-#PBS -l select=1:ncpus=1:mem=1gb  # amount of memory needed
+
+#!/bin/sh
+#PBS -A UQ-IMB-CNSG
+#PBS -l walltime=336:00:00                                                
+#PBS -l select=1:ncpus=1:mem=1gb
 #PBS -r y                            
 #PBS -j y                          
-#PBS -e log_files  # where to put error messages
-#PBS -o log_files  # where to put output messages
-#PBS -l walltime=336:00:00  # max amount of time pipeline should run 
+#PBS -e log_files  
+#PBS -o log_files  
+ 
 
  
 cd /30days/uqfgarto/ENCODE_WGBS/

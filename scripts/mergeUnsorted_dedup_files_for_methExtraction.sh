@@ -1,8 +1,9 @@
 #! /bin/bash                                                 
+#PBS -A UQ-IMB-CNSG
 #PBS -r y                            
 #PBS -j y
-#PBS -l select=1:ncous=1:mem=5G #amount of memory needed                          
-#PBS -l walltime=336:00:00 #max amount of time the job should run
+#PBS -l select=1:ncpus=1:mem=5G                         
+#PBS -l walltime=336:00:00
 
 cd /30days/uqfgarto/ENCODE_WGBS
  
