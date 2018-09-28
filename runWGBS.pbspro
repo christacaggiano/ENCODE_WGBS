@@ -1,0 +1,26 @@
+#!/bin/sh 
+#PBS -A UQ-IMB-CNSG
+#PBS -l walltime=336:00:00 
+#PBS -l select=1:ncpus=1:mem=15gb
+#PBS -e log_files 
+#PBS -o log_files 
+#PBS -J 1-8
+#PBS -N runWGBS
+
+cd /30days/uqfgarto/ENCODE_WGBS
+
+################## environment ###############################
+GENOME_PATH="/30days/uqfgarto/Homo_sapiens/UCSC/hg38"
+BISMARK_PATH="/30days/uqfgarto/privatemodules/Bismark"
+SAMTOOLS_PATH="/30days/uqfgarto/privatemodules/samtools-1.9"
+TRIMGALORE_PATH="/30days/uqfgarto/privatemodules/TrimGalore/TrimGalore-0.5.0"
+BOWTIE_PATH="/30days/uqfgarto/privatemodules/bowtie2-2.3.4.2-macos-x86_64"
+
+################ experiment directories ######################
+input="/30days/uqfgarto/fastqc_firstrun/zaitlenn-"$PBS_ARRAY_INDEX"_BC"
+output="/30days/uqfgarto/fastqc_firstrun/output/"
+fastq_prefix=$PBS_ARRAY_INDEX
+scripts="/30days/uqfgarto/ENCODE_WGBS/scripts"
+
+################# runs the pipeline ##########################
+python wgbs.py $input $output $fastq_prefix $scripts

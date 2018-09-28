@@ -1,9 +1,8 @@
 #!/bin/sh                         
 #PBS -A UQ-IMB-CNSG                                               
-#PBS -r y                            
-#PBS -j y
 #PBS -l select=1:ncpus=1:mem=5gb                     
 #PBS -l walltime=336:00:00
+#PBS -N parallel_align
 
 cd /30days/uqfgarto/ENCODE_WGBS
 

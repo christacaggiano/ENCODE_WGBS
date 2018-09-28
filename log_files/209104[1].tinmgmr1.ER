@@ -1,0 +1,27 @@
+########################### Execution Started #############################
+JobId:209104[1].tinmgmr1
+UserName:uqfgarto
+GroupName:qris-uq
+ExecutionHost:tn107d
+###############################################################################
+/bin/sh: /30days/uqfgarto/ENCODE_WGBS/scripts/fastq_split.sh: Permission denied
+Traceback (most recent call last):
+  File "wgbs.py", line 125, in <module>
+    run_bismark(dir_path, script_directory, name)
+  File "wgbs.py", line 74, in run_bismark
+    fastq_number = len(get_fastq(output_dir)[0])
+  File "wgbs.py", line 37, in get_fastq
+    for fastq in os.listdir(dir_path + "/.fq.gz"): 
+OSError: [Errno 2] No such file or directory: '/30days/uqfgarto/fastqc_firstrun/output/1/.fq.gz'
+########################### Job Execution History #############################
+JobId:209104[1].tinmgmr1
+UserName:uqfgarto
+GroupName:qris-uq
+JobName:runWGBStest
+SessionId:45915
+ResourcesRequested:mem=5gb,ncpus=1,place=free,walltime=06:00:00
+ResourcesUsed:cpupercent=0,cput=00:00:00,mem=0kb,ncpus=1,vmem=0kb,walltime=00:00:00
+QueueUsed:Short
+AccountString:UQ-IMB-CNSG
+ExitStatus:1
+###############################################################################

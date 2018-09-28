@@ -1,9 +1,8 @@
 #! /bin/bash                                                 
-#PBS -A UQ-IMB-CNSG
-#PBS -r y                            
-#PBS -j y
+#PBS -A UQ-IMB-CNSG                           
 #PBS -l select=1:ncpus=1:mem=5G                         
 #PBS -l walltime=336:00:00
+#PBS -N mergeUnsorted_dedup_files_for_methExtraction
 
 cd /30days/uqfgarto/ENCODE_WGBS
  
